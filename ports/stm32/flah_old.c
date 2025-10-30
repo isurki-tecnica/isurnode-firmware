@@ -132,13 +132,6 @@ static const flash_layout_t flash_layout[] = {
 };
 #endif
 
-// --- AÑADE ESTE NUEVO BLOQUE ESPECÍFICO ---
-#elif defined(STM32L431xx) || defined(STM32L432xx) || defined(STM32L433xx) || defined(STM32L443xx)
-#define FLASH_LAYOUT_IS_HOMOGENEOUS (1)
-#define FLASH_LAYOUT_START_ADDR     (0x08000000)
-#define FLASH_LAYOUT_SECTOR_SIZE    (2048)
-#define FLASH_LAYOUT_NUM_SECTORS    (128) // Correcto para 256KB de Flash (256/2)
-
 #elif defined(STM32G0) || defined(STM32G4) || defined(STM32L0) || defined(STM32L4) || defined(STM32WB) || defined(STM32WL)
 
 #define FLASH_LAYOUT_IS_HOMOGENEOUS (1)

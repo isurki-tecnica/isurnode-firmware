@@ -538,13 +538,19 @@ MP_WEAK void SystemClock_Config(void) {
 
     RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SAI1 | RCC_PERIPHCLK_I2C1
-        | RCC_PERIPHCLK_USB | RCC_PERIPHCLK_ADC
+    #if MICROPY_HW_ENABLE_USB
+        | RCC_PERIPHCLK_USB
+    #endif
+        | RCC_PERIPHCLK_ADC
         | RCC_PERIPHCLK_RNG | RCC_PERIPHCLK_RTC;
+
     PeriphClkInitStruct.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
 
     PeriphClkInitStruct.Sai1ClockSelection = RCC_SAI1CLKSOURCE_PLLSAI1;
     PeriphClkInitStruct.AdcClockSelection = RCC_ADCCLKSOURCE_PLLSAI1;
+    #if MICROPY_HW_ENABLE_USB
     PeriphClkInitStruct.UsbClockSelection = RCC_USBCLKSOURCE_PLLSAI1;
+    #endif
     PeriphClkInitStruct.RngClockSelection = RCC_RNGCLKSOURCE_PLLSAI1;
 
     #if MICROPY_HW_RTC_USE_LSE
