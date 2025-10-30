@@ -30,10 +30,12 @@ sudo apt install -y gcc-arm-none-eabi binutils-arm-none-eabi
 
 # Install DFU tool for flashing
 sudo apt install -y dfu-util
-Step 2: Clone This Repository
+```
+
+### Step 2: Clone This Repository
 Clone this private firmware repository to your system:
 
-Bash
+```bash
 
 cd ~
 git clone [https://github.com/isurki-tecnica/isurnode-firmware.git](https://github.com/isurki-tecnica/isurnode-firmware.git)
@@ -43,11 +45,12 @@ cd isurnode-firmware
 
 # Switch to our working branch (if not already on 'main')
 git checkout main
-Step 3: Compile the Firmware
+
+```
+### Step 3: Compile the Firmware
 Finally, navigate to the stm32 port directory within the cloned repository and run the build commands:
 
-Bash
-
+```bash
 # Navigate to the STM32 port
 cd ports/stm32
 
@@ -59,12 +62,15 @@ make submodules
 
 # Start the build process
 make BOARD=ISURNODE
+```
+
 Firmware File Location
 The compiled firmware file will be generated in the following directory, accessible from both your WSL environment and Windows:
 
 ports/stm32/build-ISURNODE/firmware.bin
 
-Step 4: Flashing & Filesystem Setup
+### Step 4: Flashing & Filesystem Setup
+
 Flashing the Firmware (J-Link)
 Connect a J-Link programmer to the JTAG port on the ISURNODE.
 
