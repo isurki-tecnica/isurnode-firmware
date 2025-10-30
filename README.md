@@ -87,7 +87,7 @@ Connect to the ISURNODE's REPL (e.g., using a serial terminal in STM32CubeProgra
 
 Paste the following Python code into the REPL and execute it. This will format the flash and create a main.py file.
 
-Python
+```Python
 
 import pyb, os
 try:
@@ -106,7 +106,8 @@ print(os.listdir())
 f=open('main.py')
 print(f.read())
 f.close()
-Step 5: Application Code (app/)
+```
+### Step 5: Application Code (app/)
 This repository also contains the /app folder.
 
 IMPORTANT: The contents of this folder (main.py, config/, etc.) are NOT compiled into the firmware. These files represent the Python application logic and must be uploaded manually to the STM32's filesystem (e.g., using Thonny or rshell) after flashing the firmware and creating the filesystem. This allows for flexible updates to the application logic without recompiling the entire firmware.
