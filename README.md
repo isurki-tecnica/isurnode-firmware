@@ -1,7 +1,7 @@
 # The ISURNODE Firmware Project
 =====================================
 
-This is the custom MicroPython firmware (based on v1.25.0) for the ISURKI ISURNODE IoT Datalogger (STM32).
+This is the custom MicroPython firmware (based on v1.25.0) for the ISURKI ISURNODE Low-Power Input/Output Module with Modbus RTU (STM32).
 It aims to provide a reliable and optimized firmware for data logging applications, leveraging the flexibility of MicroPython.
 
 WARNING: This project is derived from MicroPython v1.25.0 and includes custom modifications. While effort is made to maintain stability, it is subject to changes and may differ from upstream MicroPython.
